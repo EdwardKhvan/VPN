@@ -6,6 +6,11 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		118D412F2E26E9A500563E64 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 118D412E2E26E9A400563E64 /* NetworkExtension.framework */; };
+		118D41372E26E9A500563E64 /* networkExten.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = 118D412C2E26E9A400563E64 /* networkExten.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		118D40FE2E26C84900563E64 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -21,12 +26,35 @@
 			remoteGlobalIDString = 118D40E62E26C84700563E64;
 			remoteInfo = VPN;
 		};
+		118D41352E26E9A500563E64 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 118D40DF2E26C84700563E64 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 118D412B2E26E9A400563E64;
+			remoteInfo = networkExten;
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		118D413C2E26E9A500563E64 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				118D41372E26E9A500563E64 /* networkExten.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		118D40E72E26C84700563E64 /* VPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = VPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		118D40FD2E26C84900563E64 /* VPNTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VPNTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		118D41072E26C84900563E64 /* VPNUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = VPNUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		118D412C2E26E9A400563E64 /* networkExten.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = networkExten.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		118D412E2E26E9A400563E64 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
@@ -36,6 +64,13 @@
 				Info.plist,
 			);
 			target = 118D40E62E26C84700563E64 /* VPN */;
+		};
+		118D413B2E26E9A500563E64 /* Exceptions for "networkExten" folder in "networkExten" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = 118D412B2E26E9A400563E64 /* networkExten */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -56,6 +91,14 @@
 		118D410A2E26C84900563E64 /* VPNUITests */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = VPNUITests;
+			sourceTree = "<group>";
+		};
+		118D41302E26E9A500563E64 /* networkExten */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				118D413B2E26E9A500563E64 /* Exceptions for "networkExten" folder in "networkExten" target */,
+			);
+			path = networkExten;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -82,6 +125,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		118D41292E26E9A400563E64 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				118D412F2E26E9A500563E64 /* NetworkExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -91,6 +142,8 @@
 				118D40E92E26C84700563E64 /* VPN */,
 				118D41002E26C84900563E64 /* VPNTests */,
 				118D410A2E26C84900563E64 /* VPNUITests */,
+				118D41302E26E9A500563E64 /* networkExten */,
+				118D412D2E26E9A400563E64 /* Frameworks */,
 				118D40E82E26C84700563E64 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -101,8 +154,17 @@
 				118D40E72E26C84700563E64 /* VPN.app */,
 				118D40FD2E26C84900563E64 /* VPNTests.xctest */,
 				118D41072E26C84900563E64 /* VPNUITests.xctest */,
+				118D412C2E26E9A400563E64 /* networkExten.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		118D412D2E26E9A400563E64 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				118D412E2E26E9A400563E64 /* NetworkExtension.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -115,10 +177,12 @@
 				118D40E32E26C84700563E64 /* Sources */,
 				118D40E42E26C84700563E64 /* Frameworks */,
 				118D40E52E26C84700563E64 /* Resources */,
+				118D413C2E26E9A500563E64 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				118D41362E26E9A500563E64 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				118D40E92E26C84700563E64 /* VPN */,
@@ -176,6 +240,28 @@
 			productReference = 118D41072E26C84900563E64 /* VPNUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		118D412B2E26E9A400563E64 /* networkExten */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 118D41382E26E9A500563E64 /* Build configuration list for PBXNativeTarget "networkExten" */;
+			buildPhases = (
+				118D41282E26E9A400563E64 /* Sources */,
+				118D41292E26E9A400563E64 /* Frameworks */,
+				118D412A2E26E9A400563E64 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				118D41302E26E9A500563E64 /* networkExten */,
+			);
+			name = networkExten;
+			packageProductDependencies = (
+			);
+			productName = networkExten;
+			productReference = 118D412C2E26E9A400563E64 /* networkExten.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -197,6 +283,9 @@
 						CreatedOnToolsVersion = 16.2;
 						TestTargetID = 118D40E62E26C84700563E64;
 					};
+					118D412B2E26E9A400563E64 = {
+						CreatedOnToolsVersion = 16.2;
+					};
 				};
 			};
 			buildConfigurationList = 118D40E22E26C84700563E64 /* Build configuration list for PBXProject "VPN" */;
@@ -216,6 +305,7 @@
 				118D40E62E26C84700563E64 /* VPN */,
 				118D40FC2E26C84900563E64 /* VPNTests */,
 				118D41062E26C84900563E64 /* VPNUITests */,
+				118D412B2E26E9A400563E64 /* networkExten */,
 			);
 		};
 /* End PBXProject section */
@@ -236,6 +326,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		118D41052E26C84900563E64 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		118D412A2E26E9A400563E64 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,6 +363,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		118D41282E26E9A400563E64 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -279,6 +383,11 @@
 			target = 118D40E62E26C84700563E64 /* VPN */;
 			targetProxy = 118D41082E26C84900563E64 /* PBXContainerItemProxy */;
 		};
+		118D41362E26E9A500563E64 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 118D412B2E26E9A400563E64 /* networkExten */;
+			targetProxy = 118D41352E26E9A500563E64 /* PBXContainerItemProxy */;
+		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
@@ -287,8 +396,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VPN/VPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RHCPZT2F53;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VPN/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -314,8 +425,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = VPN/VPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RHCPZT2F53;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = VPN/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -523,6 +636,58 @@
 			};
 			name = Release;
 		};
+		118D41392E26E9A500563E64 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = networkExten/networkExten.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RHCPZT2F53;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = networkExten/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = networkExten;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = corp.VPN.networkExten;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		118D413A2E26E9A500563E64 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = networkExten/networkExten.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = RHCPZT2F53;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = networkExten/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = networkExten;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = corp.VPN.networkExten;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -558,6 +723,15 @@
 			buildConfigurations = (
 				118D41192E26C84900563E64 /* Debug */,
 				118D411A2E26C84900563E64 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		118D41382E26E9A500563E64 /* Build configuration list for PBXNativeTarget "networkExten" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				118D41392E26E9A500563E64 /* Debug */,
+				118D413A2E26E9A500563E64 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

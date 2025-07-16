@@ -1,36 +1,24 @@
-//
-//  PacketTunnelProvider.swift
-//  networkExten
-//
-//  Created by Хван Эдуард on 15.07.2025.
-//
-
 import NetworkExtension
 
 class PacketTunnelProvider: NEPacketTunnelProvider {
-
-    override func startTunnel(options: [String : NSObject]?, completionHandler: @escaping (Error?) -> Void) {
-        // Add code here to start the process of connecting the tunnel.
-    }
-    
-    override func stopTunnel(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
-        // Add code here to start the process of stopping the tunnel.
-        completionHandler()
-    }
-    
-    override func handleAppMessage(_ messageData: Data, completionHandler: ((Data?) -> Void)?) {
-        // Add code here to handle the message.
-        if let handler = completionHandler {
-            handler(messageData)
+    override func startTunnel(options: [String: NSObject]?, completionHandler: @escaping (Error?) -> Void) {
+        let settings = NEPacketTunnelNetworkSettings(tunnelRemoteAddress: "vpn.example.com")
+        
+        // IPv4 settings
+        let ipv4Settings = NEIPv4Settings(addresses: ["192.168.1.2"], subnetMasks: ["255.255.255.0"])
+        ipv4Settings.includedRoutes = [NEIPv4Route.default()]
+        settings.ipv4Settings = ipv4Settings
+        
+        // DNS settings
+        settings.dnsSettings = NEDNSSettings(servers: ["8.8.8.8", "8.8.4.4"])
+        settings.mtu = 1400
+        
+        self.setTunnelNetworkSettings(settings) { error in
+            completionHandler(error)
         }
     }
     
-    override func sleep(completionHandler: @escaping () -> Void) {
-        // Add code here to get ready to sleep.
+    override func stopTunnel(with reason: NEProviderStopReason, completionHandler: @escaping () -> Void) {
         completionHandler()
-    }
-    
-    override func wake() {
-        // Add code here to wake up.
     }
 }
